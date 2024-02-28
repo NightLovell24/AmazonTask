@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/amazon-task
+
+jwt:
+  token:
+    secretKey: n0rth88n0rth88n0rth88n0rth88n0rth88n0rth88side
+    expired: 900000
