@@ -6,7 +6,7 @@ import com.n0rth.amazontask.model.ReportSpecification;
 import com.n0rth.amazontask.model.SalesAndTrafficByAsin;
 import com.n0rth.amazontask.model.SalesAndTrafficByDate;
 import com.n0rth.amazontask.repository.ReportSpecificationRepository;
-import com.n0rth.amazontask.repository.SalesAndTrafficByAsinRepository;
+import com.n0rth.amazontask.repository.SalesAndTrafficByASINRepository;
 import com.n0rth.amazontask.repository.SalesAndTrafficByDateRepository;
 import com.n0rth.amazontask.service.InitializationService;
 import jakarta.annotation.PostConstruct;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class InitializationServiceImpl implements InitializationService {
 
     private final ReportSpecificationRepository reportSpecificationRepository;
-    private final SalesAndTrafficByAsinRepository byAsinRepository;
+    private final SalesAndTrafficByASINRepository byAsinRepository;
     private final SalesAndTrafficByDateRepository byDateRepository;
     private final ObjectMapper objectMapper;
 

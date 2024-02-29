@@ -1,4 +1,4 @@
-package com.n0rth.amazontask.model;
+package com.n0rth.amazontask.dto.response;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class TrafficByDate {
+public class SummaryTrafficByDate {
     private int browserPageViews;
     private int browserPageViewsB2B;
     private int mobileAppPageViews;
@@ -20,14 +20,6 @@ public class TrafficByDate {
     private int mobileAppSessionsB2B;
     private int sessions;
     private int sessionsB2B;
-    private double buyBoxPercentage;
-    private double buyBoxPercentageB2B;
-    private double orderItemSessionPercentage;
-    private double orderItemSessionPercentageB2B;
-    private double unitSessionPercentage;
-    private double unitSessionPercentageB2B;
-    private int averageOfferCount;
-    private int averageParentItems;
     private int feedbackReceived;
     private int negativeFeedbackReceived;
     private double receivedNegativeFeedbackRate;

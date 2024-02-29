@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SalesAndTrafficByAsinRepository extends MongoRepository<SalesAndTrafficByAsin, String> {
+public interface SalesAndTrafficByASINRepository extends MongoRepository<SalesAndTrafficByAsin, String> {
     List<SalesAndTrafficByAsin> findByParentAsinIn(List<String> asins);
+
 }

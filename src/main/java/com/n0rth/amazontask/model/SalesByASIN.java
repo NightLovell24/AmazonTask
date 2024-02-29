@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class SalesByAsin {
+public class SalesByASIN {
     private int unitsOrdered;
     private int unitsOrderedB2B;
     private SalesInfo orderedProductSales;

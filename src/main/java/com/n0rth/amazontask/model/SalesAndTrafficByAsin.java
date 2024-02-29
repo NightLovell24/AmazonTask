@@ -14,7 +14,7 @@ public class SalesAndTrafficByAsin {
     @Id
     private String id;
     private String parentAsin;
-    private SalesByAsin salesByAsin;
-    private TrafficByAsin trafficByAsin;
+    private SalesByASIN salesByAsin;
+    private TrafficByASIN trafficByAsin;
 
 }

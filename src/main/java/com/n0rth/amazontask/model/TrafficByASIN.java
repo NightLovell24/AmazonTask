@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class TrafficByAsin {
+public class TrafficByASIN {
     private int browserSessions;
     private int browserSessionsB2B;
     private int mobileAppSessions;

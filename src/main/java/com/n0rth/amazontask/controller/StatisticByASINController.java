@@ -1,7 +1,9 @@
 package com.n0rth.amazontask.controller;
 
+import com.n0rth.amazontask.dto.response.SummaryStatisticByASIN;
 import com.n0rth.amazontask.model.SalesAndTrafficByAsin;
 import com.n0rth.amazontask.service.StatisticByASINService;
+import com.n0rth.amazontask.service.SummaryStatisticByASINService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +17,22 @@ import java.util.List;
 @RequestMapping("/api/v1/stats/asin")
 @RequiredArgsConstructor
 public class StatisticByASINController {
-    private final StatisticByASINService statisticByDateService;
+    private final StatisticByASINService statisticByASINService;
+    private final SummaryStatisticByASINService summaryStatisticByASINService;
 
 
-    @GetMapping("")
+    @GetMapping()
     public ResponseEntity<List<SalesAndTrafficByAsin>> getStatsByASIN(@RequestParam(value = "asin")
-                                                                List<String> asins) {
+                                                                      List<String> asins) {
 
-        return ResponseEntity.ok(statisticByDateService.getStatisticByASIN(asins));
+        return ResponseEntity.ok(statisticByASINService.getStatisticByASIN(asins));
     }
+
+    @GetMapping("/summary")
+    public ResponseEntity<SummaryStatisticByASIN> getStatsByDateRange() {
+        List<SalesAndTrafficByAsin> byASINList = statisticByASINService.getAllStatisticsByASIN();
+
+        return ResponseEntity.ok(summaryStatisticByASINService.getSummaryStatisticByASIN(byASINList));
+    }
+
 }

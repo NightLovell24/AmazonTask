@@ -7,4 +7,6 @@ import java.util.List;
 public interface StatisticByASINService {
 
     List<SalesAndTrafficByAsin> getStatisticByASIN(List<String> asin);
+
+    List<SalesAndTrafficByAsin> getAllStatisticsByASIN();
 }

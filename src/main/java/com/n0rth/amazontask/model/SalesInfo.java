@@ -5,10 +5,12 @@ import lombok.*;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 public class SalesInfo {
     private double amount;
     private String currencyCode;
 
+    public SalesInfo() {
+        currencyCode = "USD";
+    }
 }
