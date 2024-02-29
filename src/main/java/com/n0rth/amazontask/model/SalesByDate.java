@@ -36,8 +36,4 @@ public class SalesByDate {
     private int unitsShipped;
     private int ordersShipped;
 
-    //
-
-
-
 }

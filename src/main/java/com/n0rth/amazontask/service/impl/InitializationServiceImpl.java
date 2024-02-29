@@ -13,10 +13,11 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 public class InitializationServiceImpl implements InitializationService {
-
+    private final Resource resource;
     private final ReportSpecificationRepository reportSpecificationRepository;
     private final SalesAndTrafficByASINRepository byAsinRepository;
     private final SalesAndTrafficByDateRepository byDateRepository;
@@ -36,9 +37,8 @@ public class InitializationServiceImpl implements InitializationService {
 
     @PostConstruct
     public void initializeDatabaseFromJsonFile() {
-        try {
-            ClassPathResource resource = new ClassPathResource(filePath);
-            Map<String, Object> map = objectMapper.readValue(resource.getFile(), new TypeReference<>() {
+        try (InputStream inputStream = resource.getInputStream()) {
+            Map<String, Object> map = objectMapper.readValue(inputStream, new TypeReference<>() {
             });
 
             ReportSpecification reportSpecification = parseObject(ReportSpecification.class,
@@ -47,6 +47,7 @@ public class InitializationServiceImpl implements InitializationService {
 
             SalesAndTrafficByDate[] salesAndTrafficByDates =
                     parseObject(SalesAndTrafficByDate[].class, map);
+
 
             SalesAndTrafficByAsin[] salesAndTrafficByAsins =
                     parseObject(SalesAndTrafficByAsin[].class, map);

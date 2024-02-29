@@ -1,4 +1,6 @@
 spring:
+  scheduled:
+    cache-update-period: 50000
   jackson:
     time-zone: Europe/Kiev
   data:
@@ -13,5 +15,5 @@ jwt:
 init:
   data:
     file:
-      path: test_report.json
+      path: file:test_report.json
 
