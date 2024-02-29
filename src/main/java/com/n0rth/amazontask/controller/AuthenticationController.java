@@ -21,7 +21,6 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegistrationRequest request) {
-        log.info("registration request " + request.toString());
         return ResponseEntity.ok(authenticationService.register(request));
     }
 
@@ -29,4 +28,6 @@ public class AuthenticationController {
     public ResponseEntity<JwtResponse> login(@RequestBody LoginRequest request) {
         return ResponseEntity.ok(authenticationService.login(request));
     }
+
+
 }

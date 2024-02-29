@@ -1,5 +1,7 @@
 package com.n0rth.amazontask.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,15 +20,8 @@ public class ReportSpecification {
     private String id;
     private String reportType;
     private ReportOptions reportOptions;
-    private LocalDate dataStartTime;
-    private LocalDate dataEndTime;
+    private String dataStartTime;
+    private String dataEndTime;
     private List<String> marketplaceIds;
 
-    public ReportSpecification(String reportType, ReportOptions reportOptions, LocalDate dataStartTime, LocalDate dataEndTime, List<String> marketplaceIds) {
-        this.reportType = reportType;
-        this.reportOptions = reportOptions;
-        this.dataStartTime = dataStartTime;
-        this.dataEndTime = dataEndTime;
-        this.marketplaceIds = marketplaceIds;
-    }
 }

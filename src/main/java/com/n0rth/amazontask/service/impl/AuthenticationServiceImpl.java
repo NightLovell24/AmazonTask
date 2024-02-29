@@ -28,10 +28,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         User user = User.builder()
                 .username(request.getUsername()).password(passwordEncoder.encode(request.getPassword()))
                 .build();
-        log.info("USERS: " + userRepository.findAll().toString());
+//        log.info("USERS: " + userRepository.findAll().toString());
         userRepository.save(user);
 
-        log.info("USERS: " + userRepository.findAll().toString());
+//        log.info("USERS: " + userRepository.findAll().toString());
 
         return "Successfully registered under the nickname " + request.getUsername();
     }

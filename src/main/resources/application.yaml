@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    time-zone: Europe/Kiev
   data:
     mongodb:
       uri: mongodb://localhost:27017/amazon-task
@@ -7,3 +9,9 @@ jwt:
   token:
     secretKey: n0rth88n0rth88n0rth88n0rth88n0rth88n0rth88side
     expired: 900000
+
+init:
+  data:
+    file:
+      path: test_report.json
+

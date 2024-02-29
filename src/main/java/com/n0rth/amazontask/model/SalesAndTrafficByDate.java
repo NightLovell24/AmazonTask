@@ -4,8 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
-
 @Data
 @Builder
 @AllArgsConstructor
@@ -15,7 +13,7 @@ import java.time.LocalDate;
 public class SalesAndTrafficByDate {
     @Id
     private String id;
-    private LocalDate date;
+    private String date;
     private SalesByDate salesByDate;
     private TrafficByDate trafficByDate;
 
